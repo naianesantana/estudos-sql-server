@@ -1,4 +1,3 @@
-# estudos-sql-server
 # 🗄️ Jornada de Estudos & Prática em SQL Server
 
 Este repositório é dedicado à documentação contínua da minha evolução prática em bancos de dados relacionais utilizando o **Microsoft SQL Server (T-SQL)**. 
