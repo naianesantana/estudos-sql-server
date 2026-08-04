@@ -25,5 +25,5 @@ estudos-sql-server/
 │   └── 02-filtros-e-ordenacao-where.sql
 │
 ├── 02-agregacoes-e-grupos/
-│   ├── 01-funcoes-agregadas.sql
+│   ├── funcoes-agregacao.sql
 
