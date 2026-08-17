@@ -27,3 +27,6 @@ estudos-sql-server/
 ├── 02-agregacoes-e-grupos/
 │   ├── funcoes-agregacao.sql
 |   ├── funcoes-agregacao-group-by-having.sql
+│
+└── 03-juncoes-e-relacionamentos/
+    └── joins.sql
