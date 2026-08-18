@@ -117,7 +117,7 @@ RIGHT JOIN DimProductSubcategory
 WHERE
 	ProductKey IS NULL
 
--- Exercício 8: A tabela abaixo [PDF] mostra a combinação entre Marca e Canal de Venda, para as marcas Contoso, Fabrikam e Litware. Crie um código SQL para chegar no mesmo resultado.
+-- Exercício 8: A tabela abaixo mostra a combinação entre Marca e Canal de Venda, para as marcas Contoso, Fabrikam e Litware. Crie um código SQL para chegar no mesmo resultado.
 /*SELECT * FROM DimProduct
 SELECT TOP(100) * FROM FactSales
 SELECT * FROM DimChannel*/
@@ -159,3 +159,28 @@ WHERE
 	PromotionName <> 'No Discount'
 ORDER BY
 	DateKey
+
+-- Exercício 10: A tabela abaixo é resultado de um Join entre a tabela FactSales e as tabelas: DimChannel, DimStore e DimProduct. Recrie esta consulta e classifique em ordem decrescente de acordo com SalesAmount.
+
+SELECT TOP(100)* FROM FactSales
+SELECT * FROM DimChannel
+SELECT * FROM DimStore
+SELECT * FROM DimProduct
+
+SELECT
+	SalesKey AS 'ID Venda', -- FactSales
+	ChannelName AS 'Canal de Venda', -- DimChannel (ChannelKey) | FactSales (channelKey)
+	StoreName AS 'Loja', -- DimStore (StoreKey) | FactSales (StoreKey)
+	ProductName AS 'Produto', -- DimProduct (ProductKey) | FactSales (ProductKey)
+	SalesAmount AS 'Valor da Venda' -- FactSales
+FROM
+	FactSales
+INNER JOIN DimChannel
+	ON FactSales.channelKey = DimChannel.ChannelKey 
+INNER JOIN DimStore
+	ON FactSales.StoreKey = DimStore.StoreKey
+INNER JOIN DimProduct
+	ON FactSales.ProductKey = DimProduct.ProductKey
+ORDER BY 
+	SalesAmount DESC
+			
